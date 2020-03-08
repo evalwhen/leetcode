@@ -2,7 +2,7 @@ package com.huzi.reverseBits;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SolutionTest {
+class SolutionLongestPalindromeRecurTest {
 
     @org.junit.jupiter.api.Test
     void reverseBits() {
