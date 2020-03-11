@@ -18,7 +18,6 @@ class Solution {
     int value = 0;
     int counter = 0;
 
-
     private int helperIter(TreeNode t, int k) {
         if (t==null) {
             return -1;
