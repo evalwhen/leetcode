@@ -1,9 +1,8 @@
 package com.huzi.treeTraverse;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
+import sun.awt.image.ImageWatched;
+
+import java.util.*;
 
 /**
  * Definition for a binary tree node.
@@ -15,88 +14,89 @@ import java.util.Stack;
  * }
  */
 class Solution {
-    int value = 0;
-    int counter = 0;
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> list = new ArrayList<Integer>();
+        inorerHelper(list, root);
+        return list;
+    }
 
-    private int helperIter(TreeNode t, int k) {
-        if (t==null) {
-            return -1;
+    public List<Integer> inorderTraversalIter(TreeNode root) {
+
+        List<Integer> list = new ArrayList<Integer>();
+        if (root == null) {
+            return list;
         }
+        Stack<TreeNode> stk = new Stack<>();
+        TreeNode cur = root;
 
-        Stack<TreeNode> stk = new Stack<TreeNode>();
-        TreeNode p = t;
-        int counter = 0;
-
-        while (!stk.isEmpty() || p != null) {
-            if (p != null) {
-                stk.push(p);
-                p = p.left;
+        while (!stk.isEmpty() || cur != null) {
+            if (cur != null) {
+                stk.push(cur);
+                cur = cur.left;
             } else {
                 TreeNode node = stk.pop();
-                counter++;
-                if (counter == k) {
-                    return node.val;
-                }
-                p = node.right;
+                list.add(node.val);
+                cur = node.right;
             }
         }
-        return -1;
+        return list;
     }
 
-    private List<Integer> bfs(TreeNode root) {
-        Stack<TreeNode> stk = new Stack<TreeNode>();
-        TreeNode p = root;
-        List<Integer> l = new ArrayList<Integer>();
+    public List<Integer> preorderTraversalIter(TreeNode root) {
 
-        while (!stk.isEmpty() || p != null) {
-            if (p != null) {
-                l.add(p.val);
-                if (p.right != null) {
-                    stk.push(p.right);
+        List<Integer> res = new ArrayList<Integer>();
+        if (root == null) {
+            return res;
+        } else {
+            Stack<TreeNode> stk = new Stack<>();
+            TreeNode cur = root;
+            while (!stk.isEmpty() || cur != null) {
+                if (cur != null) {
+                    res.add(cur.val);
+                    if (cur.right != null) {
+                        stk.push(cur.right);
+                    }
+                    cur = cur.left;
+                } else {
+                    cur = stk.pop();
                 }
-                p = p.left;
-
-            } else {
-                p = stk.pop();
             }
         }
-        return l;
+        return res;
     }
 
-    private List<Integer> lastFirst(TreeNode t) {
-        Stack<TreeNode> stk = new Stack<TreeNode>();
-        TreeNode p = t;
-        List<Integer> l = new LinkedList<Integer>();
-        while (!stk.isEmpty() || p != null) {
-            if (p != null) {
-                stk.push(p);
-                if (p.right != null) {
-                    stk.push(p.right);
+    public List<Integer> postorderTraversalIter(TreeNode root) {
+        LinkedList<Integer> res = new LinkedList<>();
+        if (root == null) {
+            return res;
+        } else {
+            Stack<TreeNode> stk = new Stack<>();
+            TreeNode cur = root;
+
+            while (!stk.isEmpty() || cur != null) {
+                if (cur != null) {
+                    res.addFirst(cur.val);
+                    if (cur.left != null) {
+                        stk.push(cur.left);
+                    }
+                    cur = cur.right;
+                } else {
+                    cur = stk.pop();
+
                 }
-                p = p.left;
-            } else {
-                TreeNode node = stk.pop();
-                l.add(node.val);
             }
+            return res;
         }
-        return l;
     }
 
-
-
-    public static void main(String[] args) {
-        TreeNode test = new TreeNode(
-                5,
-                new TreeNode(
-                        3,
-                        new TreeNode(2,
-                                new TreeNode(1, null, null),
-                                null),
-                        new TreeNode(4, null, null)),
-                new TreeNode(6, null, null));
-        Solution solution = new Solution();
-        System.out.println(solution.bfs(test));
-        System.out.println(solution.lastFirst(test));
+    private void inorerHelper(List<Integer> res, TreeNode root) {
+        if (root == null) {
+            return;
+        } else {
+            inorerHelper(res, root.left);
+            res.add(root.val);
+            inorerHelper(res, root.right);
+        }
     }
 }
 
