@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5eed50a-7899-4ef5-a5f2-56c6bf2bf507" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/huzi/dynamicProgramming/CountingBits.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/huzi/dynamicProgramming/DecodeWays.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/huzi/dynamicProgramming/MatrixBlockSum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,7 +186,7 @@
       <workItem from="1584260829757" duration="40063000" />
       <workItem from="1584869648340" duration="951000" />
       <workItem from="1585875886749" duration="1141000" />
-      <workItem from="1585877042507" duration="4349000" />
+      <workItem from="1585877042507" duration="7542000" />
     </task>
     <task id="LOCAL-00001" summary="add solutions.">
       <created>1583590167208</created>
@@ -231,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584508298258</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="decodeWays.">
+      <created>1585884155832</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1585884155832</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,7 +247,8 @@
     <MESSAGE value="add solutions." />
     <MESSAGE value="dynamic programming." />
     <MESSAGE value="dp." />
-    <option name="LAST_COMMIT_MESSAGE" value="dp." />
+    <MESSAGE value="decodeWays." />
+    <option name="LAST_COMMIT_MESSAGE" value="decodeWays." />
   </component>
   <component name="WindowStateProjectService">
     <state x="455" y="103" width="1004" height="839" key="#Project_Structure" timestamp="1583571784138">
@@ -268,10 +275,10 @@
       <screen x="0" y="0" width="1920" height="1043" />
     </state>
     <state x="625" y="214" width="653" height="615" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1043@0.0.1920.1043" timestamp="1583897116274" />
-    <state x="476" y="47" width="1304" height="950" key="CommitChangelistDialog2" timestamp="1584508298159">
+    <state x="476" y="47" width="1304" height="950" key="CommitChangelistDialog2" timestamp="1585884155724">
       <screen x="0" y="0" width="1920" height="1043" />
     </state>
-    <state x="476" y="47" width="1304" height="950" key="CommitChangelistDialog2/0.0.1920.1043@0.0.1920.1043" timestamp="1584508298159" />
+    <state x="476" y="47" width="1304" height="950" key="CommitChangelistDialog2/0.0.1920.1043@0.0.1920.1043" timestamp="1585884155724" />
     <state x="690" y="224" width="528" height="594" key="FileChooserDialogImpl" timestamp="1584758934182">
       <screen x="0" y="0" width="1920" height="1043" />
     </state>
